@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Grindingan</title>
+    <!-- JUDUL -->
+    <style type="text/css">
+        /* Membuat border / box */
+        main{
+            max-width: 100%;
+            /* Mengatur Maxsimal Ukuran*/
+            margin-left: 30%;
+            /* Mengatur margin kiri*/
+            border: 4px solid gray;
+            /* Ukuran border 4px solid warna abu"*/
+            border-radius: 10px 10px;
+            /* Ukuran border 4px solid warna abu"*/
+            width: 40%;
+            height: 40%;
+            /* Mengatur Ukuran */
+            text-align: center;
+            /* text di pindahkan ke tengah */
+            background-color: lightgreen;
+            /* background warna ijo cerah */
+        }
+    </style>
+</head>
+<!-- java script -->
+        <script type="text/javascript">
+            function Cek_Harga() {
+            // Membuat function bernama Cek_Harga
+                var Total_RP = document.getElementById("Total_RP").value;
+                var Vehicle = document.getElementById("Vehicle").value;
+                var Status = document.getElementById("Status").value;
+
+				console.log(Total_RP);
+				console.log(Vehicle);
+				console.log(Status);
+
+
+
+				if(Vehicle == "tank"){
+				console.log(Total_RP);
+				console.log(Vehicle);
+					if(Status == "non_premi"){
+					var result = Total_RP*1.5;
+          document.getElementById("harga").value = result;
+					}else if(Status == "premionly"){
+          var result = Total_RP*0.75;
+          document.getElementById("harga").value = result;
+					}
+					else if(Status == "premitalis"){
+          var result = Total_RP*0.30;
+          document.getElementById("harga").value = result;
+					}
+
+				}else if(Vehicle == "aviation"){
+					if(Status == "non_premi"){
+          var result = Total_RP*0.75;
+          console.log(result);
+          document.getElementById("harga").value = result;
+					}else if(Status == "premionly"){
+          var result = Total_RP*0.35;
+          document.getElementById("harga").value = result;
+					}
+					else if(Status == "premitalis"){
+          var result = Total_RP*0.25;
+          document.getElementById("harga").value = result;
+					}
+
+				}
+				else if(Vehicle == "helicopter"){
+					if(Status == "non_premi"){
+          var result = Total_RP*2;
+          document.getElementById("harga").value = result;
+					}else if(Status == "premionly"){
+          var result = Total_RP*1;
+          document.getElementById("harga").value = result;
+					}
+					else if(Status == "premitalis"){
+          var result = Total_RP*0.5;
+          document.getElementById("harga").value = result;
+					}
+
+				}
+				else if(Vehicle == "ship"){
+					if(Status == "non_premi"){
+          var result = Total_RP*1.5;
+          document.getElementById("harga").value = result;
+					}else if(Status == "premionly"){
+          var result = Total_RP*0.75;
+          document.getElementById("harga").value = result;
+					}
+					else if(Status == "premitalis"){
+          var result = Total_RP*0.30;
+          document.getElementById("harga").value = result;
+					}
+
+				}
+
+            }
+        </script>
+<body>
+    <main>
+        <h1> Ngitung Grindingan </h1>
+        <!-- Nama Judul -->
+        <form name="RP">
+        <!-- Membuat form yang bernama RP -->
+            <p></p>
+            Total Research Point<br>
+            <input type="text" id="Total_RP" name="Total_RP" value ="200">
+            <!-- Membuat input yang bernama Vechicle -->
+            <p></p>
+            Vehicle<br>
+            <select name="Vehicle" id="Vehicle">
+              <option value="tank" selected="selected">Tank </option>
+              <option value="aviation">Aviation</option>
+              <option value="helicopter">helicopter</option>
+              <option value="ship">Ship</option>
+            </select>
+            <br>
+            <br>
+            <!-- Membuat input yang bernama Status -->
+            Status akun<br>
+            <select name="Status" id="Status">
+              <option value="non_premi" selected="selected">Non Premi</option>
+              <option value="premionly">Premium / Talisman</option>
+              <option value="premitalis">Premium & Talimasman</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" name="cek" value="Cek harga" onclick="Cek_Harga();">
+            <!-- Membuat input tombol -->
+            <div>
+            Total Harga
+            <br>
+            <input type="text" name="harga" id="harga">
+            <!-- Membuat colom text bernama hasil -->
+            <p></p>
+            </div>
+        </form>
+
+
+
+    </main>
+</body>
+</html>
